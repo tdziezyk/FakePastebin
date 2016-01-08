@@ -6,10 +6,13 @@ angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterPro
 		url : "/add_pastebin",
 		templateUrl : "templates/one_pastebin.html",
 		controller : "OnePastebinController",
-		controllerAs: "ctrl",
+		controllerAs : "ctrl",
 		resolve : {
 			buttonText : function() {
 				return "add pastebin";
+			},
+			'LanguagesData' : function(langService) {
+				return langService.promise;
 			}
 		}
 	}).state('pastebinList', {
@@ -22,10 +25,13 @@ angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterPro
 		url : "/edit_pastebin",
 		templateUrl : "templates/one_pastebin.html",
 		controller : 'OnePastebinController',
-		controllerAs: "ctrl",
+		controllerAs : "ctrl",
 		resolve : {
 			buttonText : function() {
 				return "edit pastebin";
+			},
+			'LanguagesData' : function(langService) {
+				return langService.promise;
 			}
 		}
 	});
