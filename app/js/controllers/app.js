@@ -1,3 +1,3 @@
-angular.module('app').controller('appController', function() {
+angular.module('app').controller('AppController', [function() {
 	console.log("APP CONTROLLER");
-});
+}]);

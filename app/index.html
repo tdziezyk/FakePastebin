@@ -9,14 +9,18 @@
 <script src="js/angularjs/angular-ui-router.min.js"></script>
 <script src="js/configs/appConfig.js"></script>
 <script src="js/controllers/app.js"></script>
+<script src="js/controllers/onePastebinController.js"></script>
 
 <title>Fake Pastebin</title>
 </head>
 
-<body ng-app="app">
+<body ng-app="app" ng-controller="AppController">
 	<nav>
-		<a ui-sref="login">Login</a>
-		<a ui-sref="login2">Login2</a>
+		<a ui-sref="authentication">authentication</a>
+		<a ui-sref="addPastebin">addPastebin</a>
+		<a ui-sref="pastebinList">pastebinList</a>
+		<a ui-sref="usersPastebin">usersPastebin</a>
+		<a ui-sref="editPastebin">editPastebin</a>
 	</nav>
 	<div ui-view>
 	up

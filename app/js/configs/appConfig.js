@@ -1,13 +1,33 @@
 angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-	$stateProvider.state('home', {
-		url : "/login",
-		templateUrl : "templates/login.html",
-	}).state('login', {
-		url : "/login",
-		templateURL : "templates/login.html"
-	}).state('login2', {
-		url: "/login2",
-		templateUrl: "templates/login2.html"
+	$stateProvider.state('authentication', {
+		url : "/",
+		templateUrl : "templates/login_or_signup.html",
+	}).state('addPastebin', {
+		url : "/add_pastebin",
+		templateUrl : "templates/one_pastebin.html",
+		controller : "OnePastebinController",
+		controllerAs: "ctrl",
+		resolve : {
+			buttonText : function() {
+				return "add pastebin";
+			}
+		}
+	}).state('pastebinList', {
+		url : "/pastebin_list",
+		templateUrl : "templates/pastebin_list.html"
+	}).state('usersPastebin', {
+		url : "/users_pastebin",
+		templateUrl : "templates/pastebin_list.html"
+	}).state('editPastebin', {
+		url : "/edit_pastebin",
+		templateUrl : "templates/one_pastebin.html",
+		controller : 'OnePastebinController',
+		controllerAs: "ctrl",
+		resolve : {
+			buttonText : function() {
+				return "edit pastebin";
+			}
+		}
 	});
-	$urlRouterProvider.otherwise("/login");
+	$urlRouterProvider.otherwise("/");
 } ]);
