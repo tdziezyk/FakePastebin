@@ -1,7 +1,7 @@
 angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('authentication', {
 		url : "/",
-		templateUrl : "templates/login_or_signup.html",
+		templateUrl : "templates/login_or_signup.html"
 	}).state('addPastebin', {
 		url : "/add_pastebin",
 		templateUrl : "templates/one_pastebin.html",
@@ -13,6 +13,9 @@ angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterPro
 			},
 			'LanguagesData' : function(langService) {
 				return langService.promise;
+			},
+			'UserData' : function(userService) {
+				return userService.login(2);
 			}
 		}
 	}).state('pastebinList', {
@@ -32,6 +35,9 @@ angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterPro
 			},
 			'LanguagesData' : function(langService) {
 				return langService.promise;
+			},
+			'UserData' : function(userService) {
+				return userService.login(2);
 			}
 		}
 	});
