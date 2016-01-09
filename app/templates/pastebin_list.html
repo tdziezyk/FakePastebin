@@ -1,1 +1,16 @@
 <div>PASTEBIN LIST</div>
+<table>
+	<tr>
+		<th>Author</th>
+		<th>Date</th>
+		<th>Language</th>
+		<th>Pastebin</th>
+	</tr>
+	
+	<tr ng-repeat="pastebin in ctrl.pastebins.data">
+		<td>{{::pastebin.username}}</td>
+		<td>{{::pastebin.date | date:'MMM d, y h:mm a'}}</td>
+		<td>{{::pastebin.language}}</td>
+		<td>{{::pastebin.code}}</td>
+	</tr>
+</table>

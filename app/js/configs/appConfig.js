@@ -20,7 +20,9 @@ angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterPro
 		}
 	}).state('pastebinList', {
 		url : "/pastebin_list",
-		templateUrl : "templates/pastebin_list.html"
+		templateUrl : "templates/pastebin_list.html",
+		controller : "PastebinListController",
+		controllerAs : "ctrl"
 	}).state('usersPastebin', {
 		url : "/users_pastebin",
 		templateUrl : "templates/pastebin_list.html"
