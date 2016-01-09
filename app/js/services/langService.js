@@ -1,4 +1,6 @@
 (function(angular) {
+	"use strict";
+
 	angular.module('app').factory('langService', [ '$http', '$log', 'REST_END_POINT', function($http, $log, REST_END_POINT) {
 		var langs = null;
 

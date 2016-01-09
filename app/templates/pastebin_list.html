@@ -8,7 +8,7 @@
 	</tr>
 
 	<tr ng-repeat="pastebin in ctrl.displayPastebins">
-		<td>{{$index}} {{pastebin.username}}</td>
+		<td>{{pastebin.username}}</td>
 		<td>{{pastebin.date | date:'MMM d, y h:mm a'}}</td>
 		<td>{{pastebin.language}}</td>
 		<td>{{pastebin.code}}</td>

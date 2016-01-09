@@ -1,7 +1,7 @@
 (function(angular) {
-	angular.module('app').factory('pastebinService', [ '$http', '$log', 'REST_END_POINT', function($http, $log, REST_END_POINT) {
-		var pastebin = null, pastebins = {data: null};
+	"use strict";
 
+	angular.module('app').factory('pastebinService', [ '$http', '$log', 'REST_END_POINT', function($http, $log, REST_END_POINT) {
 		var getPastebin = function(id) {
 			return $http({
 				method : 'GET',
@@ -13,12 +13,12 @@
 				$log.error("Request Failed: ", response);
 			});
 		};
-		
-		var addPastebin = function(data){
+
+		var addPastebin = function(data) {
 			return $http({
 				method : 'POST',
 				url : REST_END_POINT + '/pastebins/',
-				data: data
+				data : data
 			}).then(function(response) {
 				$log.log(response);
 				return response.data;
@@ -27,11 +27,11 @@
 			});
 		};
 
-		var updatePastebin = function(data, id){
+		var updatePastebin = function(data, id) {
 			return $http({
 				method : 'PUT',
 				url : REST_END_POINT + '/pastebins/' + id,
-				data: data
+				data : data
 			}).then(function(response) {
 				$log.log(response);
 				return response.data;
@@ -51,8 +51,8 @@
 				$log.error("Request Failed: ", response);
 			});
 		};
-		
-		var getPastebins = function(){
+
+		var getPastebins = function() {
 			return $http({
 				method : 'GET',
 				url : REST_END_POINT + '/pastebins/'
@@ -63,7 +63,7 @@
 				$log.error("Request Failed: ", response);
 			});
 		};
-		
+
 		return {
 			getPastebin : getPastebin,
 			addPastebin : addPastebin,

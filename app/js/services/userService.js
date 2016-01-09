@@ -1,8 +1,10 @@
 (function(angular) {
+	"use strict";
+
 	angular.module('app').factory('userService', [ '$http', '$log', 'REST_END_POINT', function($http, $log, REST_END_POINT) {
 		var user = null;
-		
-		var login = function (id){
+
+		var login = function(id) {
 			return $http({
 				method : 'GET',
 				url : REST_END_POINT + '/users/' + id
@@ -10,22 +12,22 @@
 				user = response.data;
 			}, function(response) {
 				$log.error("Request Failed: ", response);
-			});			
+			});
 		};
-		
-		var logout = function(){
+
+		var logout = function() {
 			user = null;
 		};
 
 		var getUsername = function() {
 			return user.username;
 		};
-		
-		var getUserId = function(){
+
+		var getUserId = function() {
 			return user.id;
 		};
-		
-		var isAdmin = function(){
+
+		var isAdmin = function() {
 			return Boolean(user.is_admin);
 		};
 

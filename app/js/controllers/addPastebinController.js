@@ -1,4 +1,6 @@
 (function(angular) {
+	"use strict";
+
 	angular.module('app').controller('AddPastebinController',
 			[ 'langService', 'userService', 'pastebinService', '$state', function(langService, userService, pastebinService, $state) {
 				var that = this;
@@ -17,12 +19,12 @@
 					that.pastebin.date = new Date();
 					that.pastebin.lang_id = that.selectedLanguage.id;
 					that.pastebin.language = that.selectedLanguage.name;
-					pastebinService.addPastebin(that.pastebin).then(function(){
+					pastebinService.addPastebin(that.pastebin).then(function() {
 						$state.go('pastebinList');
 					});
 				};
-				
-				that.cancelAction = function(){
+
+				that.cancelAction = function() {
 					$state.go('pastebinList');
 				};
 			} ]);
