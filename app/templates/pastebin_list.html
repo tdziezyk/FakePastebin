@@ -13,7 +13,7 @@
 		<td>{{pastebin.language}}</td>
 		<td>{{pastebin.code}}</td>
 		<td ng-if="ctrl.isErasable(pastebin)"><button
-				ng-click="ctrl.removePastebin(pastebin.id, $index)"
-				ng-disable="{{!canDeleteData}}">Delete</button></td>
+				ng-click="ctrl.removePastebin(pastebin.id, $index)">Delete</button></td>
+		<td ng-if="ctrl.isEditable(pastebin)" ng-click="ctrl.edit(pastebin)"><button>Edit</button></td>
 	</tr>
 </table>
