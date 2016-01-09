@@ -15,9 +15,16 @@
 			return langs;
 		};
 
+		var getLanguageById = function(id) {
+			return langs.filter(function(lang) {
+				return lang.id === id;
+			})[0];
+		};
+
 		return {
 			promise : promise,
-			getLanguages : getLanguages
+			getLanguages : getLanguages,
+			getLanguageById : getLanguageById
 		};
 	} ]);
 })(angular);

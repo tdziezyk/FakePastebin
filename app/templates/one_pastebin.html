@@ -1,12 +1,15 @@
 <div>
 	<div>ONE PASTEBIN</div>
 	<div>
-		<span>Username: </span> {{::ctrl.username}}
+		<span>Username: </span> {{::ctrl.pastebin.username}}
 	</div>
 	<div>
-		<span>Pastebin language: </span> <select name="language"><option ng-repeat="language in ctrl.languages"
-				value="{{::language.id}}">{{::language.name}}</option></select>
+		<span>Pastebin language: </span> <select name="language"
+			ng-model="ctrl.selectedLanguage"
+			ng-options="option.name for option in ctrl.languages track by option.id">
+			
+		</select>
 	</div>
-	<textarea placeholder="Here paste your code"></textarea>
-	<button>{{::ctrl.buttonText}}</button>
+	<textarea placeholder="Here paste your code" ng-model="ctrl.pastebin.code"></textarea>
+	<button ng-click="ctrl.buttonAction()">{{::ctrl.buttonText}}</button>
 </div>
