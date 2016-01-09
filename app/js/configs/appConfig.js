@@ -19,7 +19,12 @@ angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterPro
 		url : "/pastebin_list",
 		templateUrl : "templates/pastebin_list.html",
 		controller : "PastebinListController",
-		controllerAs : "ctrl"
+		controllerAs : "ctrl",
+		resolve:{
+			'UserData' : function(userService) {
+				return userService.login(2);
+			}
+		}
 	}).state('usersPastebin', {
 		url : "/users_pastebin",
 		templateUrl : "templates/pastebin_list.html"

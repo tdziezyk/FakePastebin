@@ -39,24 +39,36 @@
 				$log.error("Request Failed: ", response);
 			});
 		};
-		
-		var getPastebins = function(){
-			$http({
-				method : 'GET',
-				url : REST_END_POINT + '/pastebins/'
+
+		var deletePastebin = function(id) {
+			return $http({
+				method : 'DELETE',
+				url : REST_END_POINT + '/pastebins/' + id
 			}).then(function(response) {
-				pastebins.data = response.data;
 				$log.log(response);
+				return response;
 			}, function(response) {
 				$log.error("Request Failed: ", response);
 			});
-			return pastebins;
+		};
+		
+		var getPastebins = function(){
+			return $http({
+				method : 'GET',
+				url : REST_END_POINT + '/pastebins/'
+			}).then(function(response) {
+				$log.log(response);
+				return response.data;
+			}, function(response) {
+				$log.error("Request Failed: ", response);
+			});
 		};
 		
 		return {
 			getPastebin : getPastebin,
 			addPastebin : addPastebin,
 			updatePastebin : updatePastebin,
+			deletePastebin : deletePastebin,
 			getPastebins : getPastebins
 		};
 	} ]);
