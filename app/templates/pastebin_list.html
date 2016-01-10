@@ -1,4 +1,8 @@
 <div>PASTEBIN LIST</div>
+
+<div>
+	<input type="text" ng-model="ctrl.textFilter" placeholder="Code filter" />
+</div>
 <table>
 	<tr>
 		<th>Author</th>
@@ -6,10 +10,19 @@
 		<th>Language</th>
 		<th>Pastebin</th>
 	</tr>
-
-	<tr ng-repeat="pastebin in ctrl.displayPastebins">
+	<tr>
+		<th><input type="text" ng-model="ctrl.authorFilter"
+			placeholder="Author filter" /></th>
+		<th><input type="text" ng-model="ctrl.dateFilter"
+			placeholder="DD/MM/YYYY" ui-mask="99/99/9999"/></th>
+		<th><input type="text" ng-model="ctrl.languageFilter"
+			placeholder="Language filter" /></th>
+		<th></th>
+	</tr>
+	<tr
+		ng-repeat="pastebin in ctrl.displayPastebins | filter: ctrl.textFilter">
 		<td>{{pastebin.username}}</td>
-		<td>{{pastebin.date | date:'MMM d, y h:mm a'}}</td>
+		<td>{{pastebin.date | date:'dd/MM/yyyy hh:mm'}}</td>
 		<td>{{pastebin.language}}</td>
 		<td>{{pastebin.code}}</td>
 		<td ng-if="ctrl.isErasable(pastebin)"><button

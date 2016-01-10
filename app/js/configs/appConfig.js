@@ -1,7 +1,7 @@
 (function(angular) {
 	"use strict";
 
-	angular.module('app', [ 'ui.router' ]).config([ '$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+	angular.module('app', [ 'ui.router', 'ui.mask' ]).config([ '$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('authentication', {
 			url : "/",
 			templateUrl : "templates/login_or_signup.html"
