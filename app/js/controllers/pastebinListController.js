@@ -70,11 +70,16 @@
 						});
 
 						that.fulltextFilter = function(item) {
+							var textFilter, username, language, code;
 							if (!that.textFilter) {
 								return true;
-							} else if (String(item.pastebin.username).indexOf(that.textFilter) !== -1 || String(item.pastebin.language).indexOf(that.textFilter) !== -1
-									|| String(item.pastebin.code).indexOf(that.textFilter) !== -1) {
-								console.log(that.textFilter);
+							}
+							
+							textFilter = that.textFilter.toLowerCase;
+							username = String(item.pastebin.username).toLowerCase();
+							language = String(item.pastebin.language).toLowerCase();
+							code = String(item.pastebin.code).toLowerCase();
+							if (username.indexOf(textFilter) !== -1 || language.indexOf(that.textFilter) !== -1 || code.indexOf(that.textFilter) !== -1) {
 								return true;
 							}
 							return false;
