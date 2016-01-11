@@ -25,10 +25,11 @@
 						pastebinService.getPastebins().then(function(results) {
 							that.pastebins = results;
 							that.displayPastebins = [];
-							that.pastebins.forEach(function(element) {
+							that.pastebins.forEach(function(element, index) {
 								that.displayPastebins.push({
 									dateInString : dateToStringFormat(new Date(element.date)),
-									pastebin : element
+									pastebin : element,
+									list_id : index
 								});
 							});
 						});
