@@ -20,13 +20,13 @@
 		<th></th>
 	</tr>
 	<tr
-		ng-repeat="pastebin in ctrl.displayPastebins | filter: {username: ctrl.authorFilter, language: ctrl.languageFilter} | filter: ctrl.textFilter">
-		<td>{{pastebin.username}}</td>
-		<td>{{pastebin.date | date:'dd/MM/yyyy hh:mm'}}</td>
-		<td>{{pastebin.language}}</td>
-		<td>{{pastebin.code}}</td>
-		<td ng-if="ctrl.isErasable(pastebin)"><button
-				ng-click="ctrl.removePastebin(pastebin.id, $index)">Delete</button></td>
-		<td ng-if="ctrl.isEditable(pastebin)" ng-click="ctrl.edit(pastebin)"><button>Edit</button></td>
+		ng-repeat="data in ctrl.displayPastebins | filter: {pastebin: {username: ctrl.authorFilter, language: ctrl.languageFilter}} | filter: {dateInString: ctrl.dateFilter} | filter: ctrl.fulltextFilter">
+		<td>{{data.pastebin.username}}</td>
+		<td>{{data.pastebin.date | date:'dd/MM/yyyy hh:mm'}}</td>
+		<td>{{data.pastebin.language}}</td>
+		<td>{{data.pastebin.code}}</td>
+		<td ng-if="ctrl.isErasable(data.pastebin)"><button
+				ng-click="ctrl.removePastebin(data.pastebin.id, $index)">Delete</button></td>
+		<td ng-if="ctrl.isEditable(data.pastebin)" ng-click="ctrl.edit(data.pastebin)"><button>Edit</button></td>
 	</tr>
 </table>
