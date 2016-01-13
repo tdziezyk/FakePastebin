@@ -4,19 +4,10 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<!-- angular files -->
-<script src="js/angularjs/angular.min.js"></script>
-<script src="js/angularjs/angular-ui-router.min.js"></script>
-<script src="js/configs/appConfig.js"></script>
-<script src="js/controllers/app.js"></script>
-<script src="js/constants.js"></script>
-<script src="js/controllers/addPastebinController.js"></script>
-<script src="js/controllers/editPastebinController.js"></script>
-<script src="js/controllers/pastebinListController.js"></script>
-<script src="js/services/langService.js"></script>
-<script src="js/services/pastebinService.js"></script>
-<script src="js/services/userService.js"></script>
+<script src="libs/angularjs/angular.min.js"></script>
+<script src="libs/angularjs/angular-ui-router.min.js"></script>
 <script src="libs/uiMask/mask.min.js"></script>
+<script src="dist/all.min.js"></script>
 
 <title>Fake Pastebin</title>
 </head>
@@ -29,7 +20,6 @@
 		<a ui-sref="usersPastebin({id: 2})">usersPastebin</a>
 	</nav>
 	<div ui-view>
-	up
 	</div>
 </body>
 

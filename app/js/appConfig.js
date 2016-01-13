@@ -11,12 +11,12 @@
 			controller : "AddPastebinController",
 			controllerAs : "ctrl",
 			resolve : {
-				'LanguagesData' : function(langService) {
+				'LanguagesData' : ['langService', function(langService) {
 					return langService.promise;
-				},
-				'UserData' : function(userService) {
+				}],
+				'UserData' : ['userService', function(userService) {
 					return userService.login(2);
-				}
+				}]
 			}
 		}).state('pastebinList', {
 			url : "/pastebin_list",
@@ -24,9 +24,9 @@
 			controller : "PastebinListController",
 			controllerAs : "ctrl",
 			resolve : {
-				'UserData' : function(userService) {
+				'UserData' : ['userService', function(userService) {
 					return userService.login(2);
-				}
+				}]
 			}
 		}).state('usersPastebin', {
 			url : "/users_pastebin/{id:int}",
@@ -34,9 +34,9 @@
 			controller : "PastebinListController",
 			controllerAs : "ctrl",
 			resolve : {
-				'UserData' : function(userService) {
+				'UserData' : ['userService', function(userService) {
 					return userService.login(2);
-				}
+				}]
 			}
 		}).state('editPastebin', {
 			url : "/edit_pastebin/{id:int}",
@@ -44,15 +44,15 @@
 			controller : 'EditPastebinController',
 			controllerAs : "ctrl",
 			resolve : {
-				'LanguagesData' : function(langService) {
+				'LanguagesData' : ['langService', function(langService) {
 					return langService.promise;
-				},
-				'UserData' : function(userService) {
+				}],
+				'UserData' : ['userService', function(userService) {
 					return userService.login(2);
-				},
-				'Pastebin' : function($stateParams, pastebinService) {
+				}],
+				'Pastebin' : ['$stateParams', 'pastebinService', function($stateParams, pastebinService) {
 					return pastebinService.getPastebin($stateParams.id);
-				}
+				}]
 			}
 		});
 		$urlRouterProvider.otherwise("/");
