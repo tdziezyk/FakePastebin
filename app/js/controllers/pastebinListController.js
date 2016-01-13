@@ -82,7 +82,7 @@
 							username = String(item.pastebin.username).toLowerCase();
 							language = String(item.pastebin.language).toLowerCase();
 							code = String(item.pastebin.code).toLowerCase();
-							if (username.indexOf(textFilter) !== -1 || language.indexOf(that.textFilter) !== -1 || code.indexOf(that.textFilter) !== -1) {
+							if (username.indexOf(that.textFilter) !== -1 || language.indexOf(that.textFilter) !== -1 || code.indexOf(that.textFilter) !== -1) {
 								return true;
 							}
 							return false;
