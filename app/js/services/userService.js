@@ -11,7 +11,7 @@
 			}).then(function(response) {
 				user = response.data;
 			}, function(response) {
-				$log.error("Request Failed: ", response);
+				$log.error("Request Failed: " + response);
 			});
 		};
 

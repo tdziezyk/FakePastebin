@@ -10,7 +10,7 @@
 				$log.log(response);
 				return response.data;
 			}, function(response) {
-				$log.error("Request Failed: ", response);
+				$log.error("Request Failed: " + response);
 			});
 		};
 
@@ -23,7 +23,7 @@
 				$log.log(response);
 				return response.data;
 			}, function(response) {
-				$log.error("Request Failed: ", response);
+				$log.error("Request Failed: " + response);
 			});
 		};
 
@@ -36,7 +36,7 @@
 				$log.log(response);
 				return response.data;
 			}, function(response) {
-				$log.error("Request Failed: ", response);
+				$log.error("Request Failed: " + response);
 			});
 		};
 
@@ -48,7 +48,7 @@
 				$log.log(response);
 				return response;
 			}, function(response) {
-				$log.error("Request Failed: ", response);
+				$log.error("Request Failed: " + response);
 			});
 		};
 
@@ -60,7 +60,7 @@
 				$log.log(response);
 				return response.data;
 			}, function(response) {
-				$log.error("Request Failed: ", response);
+				$log.error("Request Failed: " + response);
 			});
 		};
 

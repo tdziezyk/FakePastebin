@@ -10,7 +10,7 @@
 		}).then(function(response) {
 			langs = response.data;
 		}, function(response) {
-			$log.error("Request Failed: ", response);
+			$log.error("Request Failed: " + response);
 		});
 
 		var getLanguages = function() {
