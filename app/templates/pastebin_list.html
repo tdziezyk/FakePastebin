@@ -1,32 +1,36 @@
-<div>PASTEBIN LIST</div>
+<div class="pastebin_list">
+	<div>PASTEBIN LIST</div>
 
-<div>
-	<input type="text" ng-model="ctrl.textFilter" placeholder="Full text filter" />
+	<div>
+		<input type="text" ng-model="ctrl.textFilter"
+			placeholder="Full text filter" />
+	</div>
+	<table>
+		<tr>
+			<th>Author</th>
+			<th>Date</th>
+			<th>Language</th>
+			<th>Pastebin</th>
+		</tr>
+		<tr>
+			<th><input type="text" ng-model="ctrl.authorFilter"
+				placeholder="Author filter" /></th>
+			<th><input type="text" ng-model="ctrl.dateFilter"
+				placeholder="DD/MM/YYYY" ui-mask="99/99/9999" /></th>
+			<th><input type="text" ng-model="ctrl.languageFilter"
+				placeholder="Language filter" /></th>
+			<th></th>
+		</tr>
+		<tr
+			ng-repeat="data in ctrl.displayPastebins | filter: {pastebin: {username: ctrl.authorFilter, language: ctrl.languageFilter}} | filter: {dateInString: ctrl.dateFilter} | filter: ctrl.fulltextFilter">
+			<td>{{data.pastebin.username}}</td>
+			<td>{{data.pastebin.date | date:'dd/MM/yyyy hh:mm'}}</td>
+			<td>{{data.pastebin.language}}</td>
+			<td>{{data.pastebin.code}}</td>
+			<td ng-if="ctrl.isErasable(data.pastebin)"><button
+					ng-click="ctrl.removePastebin(data.pastebin.id, data.list_id)">Delete</button></td>
+			<td ng-if="ctrl.isEditable(data.pastebin)"
+				ng-click="ctrl.edit(data.pastebin)"><button>Edit</button></td>
+		</tr>
+	</table>
 </div>
-<table>
-	<tr>
-		<th>Author</th>
-		<th>Date</th>
-		<th>Language</th>
-		<th>Pastebin</th>
-	</tr>
-	<tr>
-		<th><input type="text" ng-model="ctrl.authorFilter"
-			placeholder="Author filter" /></th>
-		<th><input type="text" ng-model="ctrl.dateFilter"
-			placeholder="DD/MM/YYYY" ui-mask="99/99/9999"/></th>
-		<th><input type="text" ng-model="ctrl.languageFilter"
-			placeholder="Language filter" /></th>
-		<th></th>
-	</tr>
-	<tr
-		ng-repeat="data in ctrl.displayPastebins | filter: {pastebin: {username: ctrl.authorFilter, language: ctrl.languageFilter}} | filter: {dateInString: ctrl.dateFilter} | filter: ctrl.fulltextFilter">
-		<td>{{data.pastebin.username}}</td>
-		<td>{{data.pastebin.date | date:'dd/MM/yyyy hh:mm'}}</td>
-		<td>{{data.pastebin.language}}</td>
-		<td>{{data.pastebin.code}}</td>
-		<td ng-if="ctrl.isErasable(data.pastebin)"><button
-				ng-click="ctrl.removePastebin(data.pastebin.id, data.list_id)">Delete</button></td>
-		<td ng-if="ctrl.isEditable(data.pastebin)" ng-click="ctrl.edit(data.pastebin)"><button>Edit</button></td>
-	</tr>
-</table>
