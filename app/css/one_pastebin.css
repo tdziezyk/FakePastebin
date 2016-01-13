@@ -1,2 +1,9 @@
-.one_pastebin {
-  background: red; }
+.one_pastebin .new-pastebin-text {
+  width: 60vw;
+  height: 50vh; }
+
+.one_pastebin .buton-panel {
+  margin-top: 2vh; }
+
+.one_pastebin .language-doropdownlist {
+  margin-bottom: 2vh; }

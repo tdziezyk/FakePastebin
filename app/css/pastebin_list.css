@@ -1,0 +1,35 @@
+.pastebin_list input {
+  display: inline;
+  width: auto; }
+
+.pastebin_list #full-search {
+  margin-bottom: 3vh; }
+
+.pastebin_list table {
+  display: inline;
+  text-align: left; }
+  .pastebin_list table td {
+    width: auto; }
+  .pastebin_list table tr, .pastebin_list table th {
+    height: 7vh; }
+  .pastebin_list table td, .pastebin_list table th {
+    border: 1px solid #DDD;
+    padding-left: 1vw;
+    padding-right: 1vw; }
+  .pastebin_list table tr:nth-child(even) {
+    background-color: #99FF99; }
+  .pastebin_list table td:nth-child(4) {
+    width: 30vw; }
+
+.pastebin_list #no-data-row-container {
+  position: relative; }
+
+.pastebin_list #no-data-row {
+  height: 100%;
+  width: 91.5vw;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -25%); }

@@ -1,0 +1,52 @@
+.pastebin_list{
+	input{
+		display: inline;
+		width: auto;
+	}
+	
+	#full-search{
+		margin-bottom: 3vh;
+	}
+	
+	table{
+		display: inline;
+		text-align: left;
+		
+		td{
+			width: auto;
+		}
+		
+		tr, th{
+			height: 7vh;
+		}
+		
+		td, th{
+			border: 1px solid #DDD;
+			padding-left: 1vw;
+			padding-right: 1vw;
+		}
+		
+		tr:nth-child(even){
+			background-color: #99FF99;
+		}
+		
+		td:nth-child(4){
+			width:30vw;
+		}
+	}
+	
+	#no-data-row-container{
+		position: relative;
+	}
+	
+	#no-data-row{
+		height: 100%;
+		width: 91.5vw;
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		transform: translate(0, -25%);
+	}
+}

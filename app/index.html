@@ -15,15 +15,19 @@
 <title>Fake Pastebin</title>
 </head>
 
-<body ng-app="app" ng-controller="AppController">
+<body class="main" ng-app="app" ng-controller="AppController">
 	<nav>
-		<a ui-sref="authentication">authentication</a>
-		<a ui-sref="addPastebin">addPastebin</a>
+		<ul class="nav nav-pills">
+			<li><a class="btn btn-info" ui-sref="authentication">Authentication</a></li>
+			<li><a class="btn btn-info" ui-sref="addPastebin">Add Pastebin</a></li>
+			<li><a class="btn btn-info" ui-sref="pastebinList">Pastebin List</a></li>
+			<li><a class="btn btn-info" ui-sref="usersPastebin({id: 2})">Users Pastebin</a></li>
+		</ul>
+		<!-- <a ui-sref="addPastebin">addPastebin</a>
 		<a ui-sref="pastebinList">pastebinList</a>
-		<a ui-sref="usersPastebin({id: 2})">usersPastebin</a>
+		<a ui-sref="usersPastebin({id: 2})">usersPastebin</a> -->
 	</nav>
-	<div ui-view>
-	</div>
+	<div ui-view class="content"></div>
 </body>
 
 </html>
