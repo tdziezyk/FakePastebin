@@ -9,8 +9,10 @@
 					'$state',
 					'$scope',
 					'$timeout',
-					function(pastebinService, userService, $state, $scope, $timeout) {
+					'$stateParams',
+					function(pastebinService, userService, $state, $scope, $timeout, $stateParams) {
 						var that = this;
+						var userId = $stateParams.id;
 						var dateToStringFormat = function(date) {
 							return ("0" + date.getDate()).slice(-2) + ("0" + (date.getMonth() + 1)).slice(-2) + date.getFullYear();
 						};
@@ -22,7 +24,7 @@
 							return dateToStringFormat(filterDate);
 						};
 
-						pastebinService.getPastebins().then(function(results) {
+						pastebinService.getPastebins(userId).then(function(results) {
 							that.pastebins = results;
 							that.displayPastebins = [];
 							that.pastebins.forEach(function(element, index) {
@@ -35,11 +37,11 @@
 						});
 
 						that.isErasable = function(pastebin) {
-							return pastebin.user_id === userService.getUserId();
+							return pastebin.user_id === userService.getUserId() && userId;
 						};
 
 						that.isEditable = function(pastebin) {
-							return pastebin.user_id === userService.getUserId();
+							return pastebin.user_id === userService.getUserId() && userId;
 						};
 
 						that.removePastebin = function(id, position) {

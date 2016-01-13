@@ -52,7 +52,7 @@
 			});
 		};
 
-		var getPastebins = function() {
+		var getAllPastebins = function() {
 			return $http({
 				method : 'GET',
 				url : REST_END_POINT + '/pastebins/'
@@ -64,6 +64,28 @@
 			});
 		};
 
+		var getPastebinsForUser = function(id) {
+			return $http({
+				method : 'GET',
+				url : REST_END_POINT + '/pastebins/',
+				params: {user_id: id}
+			}).then(function(response) {
+				$log.log(response.data);
+				return response.data;
+			}, function(response) {
+				$log.error("Request Failed: " + response);
+			});
+		};
+		
+		var getPastebins = function(id){
+			if(id){
+				return getPastebinsForUser(id);
+			}
+			else{
+				return getAllPastebins();
+			}
+		};
+	
 		return {
 			getPastebin : getPastebin,
 			addPastebin : addPastebin,

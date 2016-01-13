@@ -29,8 +29,15 @@
 				}
 			}
 		}).state('usersPastebin', {
-			url : "/users_pastebin",
-			templateUrl : "templates/pastebin_list.html"
+			url : "/users_pastebin/{id:int}",
+			templateUrl : "templates/pastebin_list.html",
+			controller : "PastebinListController",
+			controllerAs : "ctrl",
+			resolve : {
+				'UserData' : function(userService) {
+					return userService.login(2);
+				}
+			}
 		}).state('editPastebin', {
 			url : "/edit_pastebin/{id:int}",
 			templateUrl : "templates/one_pastebin.html",
