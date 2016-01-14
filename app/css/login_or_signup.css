@@ -22,3 +22,12 @@
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
   right: 50%;
   top: 20%; }
+
+.login_or_signup .error-message {
+  max-width: 13vw;
+  position: absolute;
+  left: -100%;
+  top: 55%;
+  border-radius: 10px;
+  border: 2px solid green;
+  background: lightgreen none repeat scroll 0% 0%; }

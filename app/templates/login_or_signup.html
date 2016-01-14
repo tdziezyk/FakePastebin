@@ -1,6 +1,6 @@
 <div class="login_or_signup">
 	<div ng-controller="UserController as signupCtrl" id="registration-container">
-		<form ng-submit="signupCtrl.signup()">
+		<form ng-submit="signupCtrl.signup()" name="registerForm">
 			<H1>SIGN UP</H1>
 			<p>{{signupCtrl.message}}</p>
 			<div>
@@ -13,8 +13,9 @@
 			</div>
 			<div>
 				Repeat password: <input ng-model="signupCtrl.repeatedPassword" type="password"
-					name="password2" placeholder="Password" class="form-control" required>
+					name="password2" placeholder="Password" class="form-control" required repeat-pass="signupCtrl.user.password">
 			</div>
+			<div ng-hide="registerForm.password2.$valid" class="error-message"> Password and repeated password must be the same</div>
 			<div>
 				<input type="submit" value="Register" class="btn btn-info"/>
 			</div>
