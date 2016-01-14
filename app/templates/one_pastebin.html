@@ -3,17 +3,19 @@
 	<div>
 		<span>Your username: </span> {{::ctrl.pastebin.username}}
 	</div>
-	<div class="language-doropdownlist">
-		<span>Choose language: </span> <select name="language"
-			ng-model="ctrl.selectedLanguage"
-			ng-options="option.name for option in ctrl.languages track by option.id">
+	<form ng-submit="ctrl.buttonAction()" name="registerForm">
+		<div class="language-doropdownlist">
+			<span>Choose language: </span> <select name="language"
+				ng-model="ctrl.selectedLanguage"
+				ng-options="option.name for option in ctrl.languages track by option.id">
 
-		</select>
-	</div>
-	<textarea class="new-pastebin-text" placeholder="Here paste your code"
-		ng-model="ctrl.pastebin.code"></textarea>
-	<div class="buton-panel">
-		<button class="btn btn-info" ng-click="ctrl.buttonAction()">{{::ctrl.buttonText}}</button>
-		<button class="btn btn-warning" ng-click="ctrl.cancelAction()">{{::ctrl.cancelText}}</button>
-	</div>
+			</select>
+		</div>
+		<textarea class="new-pastebin-text" placeholder="Here paste your code"
+			ng-model="ctrl.pastebin.code" required></textarea>
+		<div class="buton-panel">
+			<button type="submit" class="btn btn-info">{{::ctrl.buttonText}}</button>
+			<button class="btn btn-warning" ng-click="ctrl.cancelAction()">{{::ctrl.cancelText}}</button>
+		</div>
+	</form>
 </div>
