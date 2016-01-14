@@ -1,0 +1,30 @@
+.login_or_signup{
+	#registration-container{
+		transform: translateY(19%);
+		margin-right: 20vw;
+	}
+	
+	#login-container, #registration-container{
+		position: relative;
+		display: inline-block;
+	}
+	
+	.btn{
+		margin-top: 3vh;
+	}
+	
+	hr{
+		position: absolute;
+	 	border: 0;
+		height: 40vh;
+		width: 1px;
+		background: #333;
+        background-image: -webkit-linear-gradient(to right, #ccc, #333, #ccc);
+	    background-image: -moz-linear-gradient(to right, #ccc, #333, #ccc);
+	    background-image: -o-linear-gradient(to right, #ccc, #333, #ccc);
+	    background-image: -webkit-gradient(linear, 100% 0, 0 0, from(#ccc), color-stop(0.5, #333), to(#ccc));
+	    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+		right: 50%;
+		top: 20%;
+	}
+}

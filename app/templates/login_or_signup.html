@@ -1,1 +1,41 @@
-<div>LOGIN OR SIGNUP PAGE</div>
+<div class="login_or_signup">
+	<div ng-controller="UserController as signupCtrl" id="registration-container">
+		<form ng-submit="signupCtrl.signup()">
+			<H1>SIGN UP</H1>
+			<p>{{message}}</p>
+			<div>
+				<span>Login:</span><input ng-model="user.username" type="text" name="user"
+					placeholder="Username" class="form-control" required>
+			</div>
+			<div>
+				Password: <input ng-model="user.password" type="password"
+					name="password" placeholder="Password" class="form-control" required>
+			</div>
+			<div>
+				Repeat password: <input ng-model="repeatedPassword" type="password"
+					name="password2" placeholder="Password" class="form-control" required>
+			</div>
+			<div>
+				<input type="submit" value="Register" class="btn btn-info"/>
+			</div>
+		</form>
+	</div>
+	<hr />
+	<div ng-controller="UserController as loginCtrl" id="login-container">
+		<form ng-submit="loginCtrl.login()">
+			<p>{{message}}</p>
+			<H1>LOGIN</H1>
+			<div>
+				Login: <input ng-model="user.username" type="text" name="user"
+					placeholder="Username" class="form-control" required>
+			</div>
+			<div>
+				Password: <input ng-model="user.password" type="password"
+					name="password" placeholder="Password" class="form-control" required>
+			</div>
+			<div>
+				<input type="submit" value="Login" class="btn btn-info"/>
+			</div>
+		</form>
+	</div>
+</div>
