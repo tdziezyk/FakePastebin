@@ -1,7 +1,7 @@
 (function(angular) {
 	"use strict";
 
-	angular.module('app').controller('AppController', [ 'userService', '$scope', function(userService, $scope) {
+	angular.module('app').controller('AppController', [ 'userService', '$scope', '$state', function(userService, $scope, $state) {
 		var that = this;
 		that.userid = function(){
 			var id = userService.getUserId();
@@ -14,6 +14,7 @@
 		
 		that.logout = function(){
 			userService.logout();
+			$state.go("authentication");
 		};
 	} ]);
 })(angular);
