@@ -2,17 +2,17 @@
 	<div ng-controller="UserController as signupCtrl" id="registration-container">
 		<form ng-submit="signupCtrl.signup()">
 			<H1>SIGN UP</H1>
-			<p>{{message}}</p>
+			<p>{{signupCtrl.message}}</p>
 			<div>
-				<span>Login:</span><input ng-model="user.username" type="text" name="user"
+				<span>Login:</span><input ng-model="signupCtrl.user.username" type="text" name="user"
 					placeholder="Username" class="form-control" required>
 			</div>
 			<div>
-				Password: <input ng-model="user.password" type="password"
+				Password: <input ng-model="signupCtrl.user.password" type="password"
 					name="password" placeholder="Password" class="form-control" required>
 			</div>
 			<div>
-				Repeat password: <input ng-model="repeatedPassword" type="password"
+				Repeat password: <input ng-model="signupCtrl.repeatedPassword" type="password"
 					name="password2" placeholder="Password" class="form-control" required>
 			</div>
 			<div>
@@ -23,14 +23,14 @@
 	<hr />
 	<div ng-controller="UserController as loginCtrl" id="login-container">
 		<form ng-submit="loginCtrl.login()">
-			<p>{{message}}</p>
+			<p>{{loginCtrl.message}}</p>
 			<H1>LOGIN</H1>
 			<div>
-				Login: <input ng-model="user.username" type="text" name="user"
+				Login: <input ng-model="loginCtrl.user.username" type="text" name="user"
 					placeholder="Username" class="form-control" required>
 			</div>
 			<div>
-				Password: <input ng-model="user.password" type="password"
+				Password: <input ng-model="loginCtrl.user.password" type="password"
 					name="password" placeholder="Password" class="form-control" required>
 			</div>
 			<div>

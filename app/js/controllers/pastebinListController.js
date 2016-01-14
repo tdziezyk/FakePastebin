@@ -37,11 +37,11 @@
 						});
 
 						that.isErasable = function(pastebin) {
-							return pastebin.user_id === userService.getUserId() && userId;
+							return pastebin.user_id === userService.getUserId() && userId !== undefined && userId !== null;
 						};
 
 						that.isEditable = function(pastebin) {
-							return pastebin.user_id === userService.getUserId() && userId;
+							return pastebin.user_id === userService.getUserId() && userId !== undefined && userId !== null;
 						};
 
 						that.removePastebin = function(id, position) {

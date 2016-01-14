@@ -78,7 +78,9 @@
 		};
 		
 		var getPastebins = function(id){
-			if(id){
+			console.log("user id");
+			console.log(id);
+			if(id !== null && id !== undefined){
 				return getPastebinsForUser(id);
 			}
 			else{
