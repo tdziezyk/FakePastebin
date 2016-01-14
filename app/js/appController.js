@@ -1,7 +1,7 @@
 (function(angular) {
 	"use strict";
 
-	angular.module('app').controller('AppController', [ 'userService', '$scope', '$state', function(userService, $scope, $state) {
+	angular.module('app').controller('AppController', [ 'userService', '$scope', '$state', '$localStorage', function(userService, $scope, $state, $localStorage) {
 		var that = this;
 		that.userid = function(){
 			var id = userService.getUserId();
@@ -16,5 +16,9 @@
 			userService.logout();
 			$state.go("authentication");
 		};
+		
+		if($localStorage.id !== undefined){
+			userService.login($localStorage.id);
+		}
 	} ]);
 })(angular);

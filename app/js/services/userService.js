@@ -1,7 +1,7 @@
 (function(angular) {
 	"use strict";
 
-	angular.module('app').factory('userService', [ '$http', '$log', 'REST_END_POINT', function($http, $log, REST_END_POINT) {
+	angular.module('app').factory('userService', [ '$http', '$log', 'REST_END_POINT', '$localStorage', function($http, $log, REST_END_POINT, $localStorage) {
 		var that = this;
 		that.user = null;
 
@@ -27,7 +27,8 @@
 			}).then(function(response) {
 				if(response.data && response.data[0]){
 					that.user = response.data[0];
-					return that.user;	
+					$localStorage.id = getUserId();
+					return that.user;
 				}
 				return {textMessage : "Wrong username or password"};
 			}, function(response) {
@@ -36,6 +37,7 @@
 		};
 		
 		var logout = function() {
+			$localStorage.$reset();
 			that.user = null;
 		};
 
