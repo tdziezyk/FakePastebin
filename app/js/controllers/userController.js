@@ -28,7 +28,7 @@
 		};
 		
 		that.logout = function(){
-			
+			userService.logout();
 		};
 	} ]);
 })(angular);

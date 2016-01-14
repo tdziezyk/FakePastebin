@@ -7,5 +7,13 @@
 			var id = userService.getUserId();
 			return id;
 		};
+		
+		that.isUserLogged = function(){
+			return userService.getUserId() >= 0;
+		};
+		
+		that.logout = function(){
+			userService.logout();
+		};
 	} ]);
 })(angular);
