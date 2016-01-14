@@ -21,6 +21,10 @@
   .pastebin_list table td:nth-child(4) {
     width: 30vw; }
 
+.pastebin_list #list-container {
+  margin-left: 2vw;
+  margin-right: 2vw; }
+
 .pastebin_list #no-data-row-container {
   position: relative; }
 
