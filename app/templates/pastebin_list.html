@@ -23,7 +23,7 @@
 				<td>{{data.pastebin.username}}</td>
 				<td>{{data.pastebin.date | date:'dd/MM/yyyy HH:mm'}}</td>
 				<td>{{data.pastebin.language}}</td>
-				<td>{{data.pastebin.code}}</td>
+				<td><textarea disabled="disabled">{{data.pastebin.code}}</textarea></td>
 				<td ng-if="ctrl.isErasable(data.pastebin)"><button
 						class="btn btn-info"
 						ng-click="ctrl.removePastebin(data.pastebin.id, data.list_id)">Delete</button></td>
