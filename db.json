@@ -1,0 +1,230 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "username": "tom",
+      "password": "password",
+      "is_admin": false
+    },
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "is_admin": true
+    },
+    {
+      "id": 2,
+      "username": "bartek",
+      "password": "bartek123",
+      "is_admin": false
+    },
+    {
+      "id": 3,
+      "username": "zenon",
+      "password": "z123",
+      "is_admin": false
+    },
+    {
+      "username": "asdf",
+      "password": 123,
+      "is_admin": false,
+      "id": 4
+    },
+    {
+      "username": "qwerty",
+      "password": 123,
+      "is_admin": false,
+      "id": 5
+    },
+    {
+      "username": "polka",
+      "password": 123,
+      "is_admin": false,
+      "id": 6
+    },
+    {
+      "username": "asdfgh",
+      "password": 123,
+      "is_admin": false,
+      "id": 7
+    }
+  ],
+  "pastebins": [
+    {
+      "id": 0,
+      "user_id": 0,
+      "username": "tom",
+      "date": 1452167163000,
+      "lang_id": 1,
+      "language": "JavaScript",
+      "code": "function(num){ var value = 5; if(num == 1){ value = 4; } return value;"
+    },
+    {
+      "id": 1,
+      "user_id": 0,
+      "username": "tom",
+      "date": 1452167163000,
+      "lang_id": 5,
+      "language": "Java",
+      "code": "ala ma kota2",
+      "language_id": 3
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "username": "admin",
+      "date": 1452167163000,
+      "lang_id": 3,
+      "language": "Python",
+      "code": "if a > b and a > c: print a elif c == b:print Yes else: print b"
+    },
+    {
+      "username": "bartek",
+      "user_id": 2,
+      "code": "ladkfoadfoafidjs\naksdfnaldsfuiadf\naksdnkadsfn\nkasdj",
+      "date": "2016-01-09T17:11:53.597Z",
+      "lang_id": 3,
+      "language": "Python",
+      "id": 7
+    },
+    {
+      "username": "bartek",
+      "user_id": 2,
+      "code": "asdfasdfasdf\nadsfasdf\nadsfafd\n123123123\nasdf!!!!",
+      "date": "2016-01-09T18:47:59.890Z",
+      "lang_id": 4,
+      "language": "C++",
+      "id": 12
+    },
+    {
+      "username": "bartek",
+      "user_id": 2,
+      "code": "{\nbackgorund: red;\n}",
+      "date": "2016-01-11T23:20:51.542Z",
+      "lang_id": 2,
+      "language": "Css",
+      "id": 13
+    },
+    {
+      "username": "bartek",
+      "user_id": 2,
+      "code": "par a = 3;\n\nif(String(a) === \"3\"){\n console.log(\"YES\");\n}\nelse{\n console.log(\"N\");\n}",
+      "date": "2016-01-11T23:22:04.153Z",
+      "lang_id": 1,
+      "language": "JavaScript",
+      "id": 14
+    },
+    {
+      "username": "bartek",
+      "user_id": 2,
+      "code": "kod nowetgo pastebina\n\nkhlhu\n\\klguigiu\n\n\nlgiguig\nhhuhik",
+      "date": "2016-01-13T21:01:17.055Z",
+      "lang_id": 4,
+      "language": "C++",
+      "id": 15
+    },
+    {
+      "username": "bartek",
+      "user_id": 2,
+      "code": "x = object()\ny = object()\n\n# TODO: change this code\nx_list = [x]\ny_list = [y]\nbig_list = []\n\nprint \"x_list contains %d objects\" % len(x_list)\nprint \"y_list contains %d objects\" % len(y_list)\nprint \"big_list contains %d objects\" % len(big_list)\n\n# testing code\nif x_list.count(x) == 10 and y_list.count(y) == 10:\n    print \"Almost there...\"\nif big_list.count(x) == 10 and big_list.count(y) == 10:\n    print \"Great!\"",
+      "date": "2016-01-13T21:18:10.476Z",
+      "lang_id": 3,
+      "language": "Python",
+      "id": 16
+    },
+    {
+      "username": "tom",
+      "user_id": 0,
+      "code": "asasasa",
+      "date": "2016-01-14T11:39:42.896Z",
+      "lang_id": 3,
+      "language": "Python",
+      "id": 17
+    },
+    {
+      "username": "tom",
+      "user_id": 0,
+      "code": "adsads",
+      "date": "2016-01-14T12:48:08.745Z",
+      "lang_id": 1,
+      "language": "JavaScript",
+      "id": 19
+    },
+    {
+      "username": "tom",
+      "user_id": 0,
+      "code": "Test",
+      "date": "2016-01-14T12:53:27.545Z",
+      "lang_id": 3,
+      "language": "Python",
+      "id": 20
+    },
+    {
+      "username": "tom",
+      "user_id": 0,
+      "code": "asdfasfdadsf",
+      "date": "2016-01-14T13:13:57.347Z",
+      "lang_id": 4,
+      "language": "C++",
+      "id": 21
+    },
+    {
+      "username": "tom",
+      "user_id": 0,
+      "code": 3,
+      "date": "2016-01-14T13:33:30.674Z",
+      "lang_id": 4,
+      "language": "C++",
+      "id": 22
+    },
+    {
+      "username": "tom",
+      "user_id": 0,
+      "code": "asdsad",
+      "date": "2016-01-14T15:39:50.251Z",
+      "lang_id": 1,
+      "language": "JavaScript",
+      "id": 24
+    },
+    {
+      "username": "tom",
+      "user_id": 0,
+      "code": "kdo",
+      "date": "2016-01-14T15:40:34.302Z",
+      "lang_id": 1,
+      "language": "JavaScript",
+      "id": 25
+    },
+    {
+      "username": "bartek",
+      "user_id": 2,
+      "code": 123,
+      "date": "2016-01-15T12:16:46.377Z",
+      "lang_id": 1,
+      "language": "JavaScript",
+      "id": 26
+    }
+  ],
+  "langs": [
+    {
+      "id": 1,
+      "name": "JavaScript"
+    },
+    {
+      "id": 2,
+      "name": "Css"
+    },
+    {
+      "id": 3,
+      "name": "Python"
+    },
+    {
+      "id": 4,
+      "name": "C++"
+    },
+    {
+      "id": 5,
+      "name": "Java"
+    }
+  ]
+}
