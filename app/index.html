@@ -27,6 +27,7 @@
 			<li><a class="btn btn-info" ng-if="ctrl.isUserLogged()" ui-sref="addPastebin">Add Pastebin</a></li>
 			<li><a class="btn btn-info" ui-sref="pastebinList">Pastebin List</a></li>
 			<li><a class="btn btn-info" ng-if="ctrl.isUserLogged()" ui-sref="usersPastebin({id: ctrl.userid()})">Users Pastebin</a></li>
+			<li><a class="btn btn-info" ng-if="ctrl.isAdminUser()" ui-sref="adminPanel">Panel Admin</a></li>
 		</ul>
 	</nav>
 	<div ui-view class="content"></div>

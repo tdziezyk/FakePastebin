@@ -12,6 +12,10 @@
 			return userService.getUserId() >= 0;
 		};
 		
+		that.isAdminUser = function(){
+			return userService.isAdmin();
+		};
+		
 		that.logout = function(){
 			userService.logout();
 			$state.go("authentication");
