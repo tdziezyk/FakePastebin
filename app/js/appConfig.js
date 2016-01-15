@@ -3,7 +3,7 @@
 
 	angular.module('app', [ 'ui.router', 'ui.mask', 'ngStorage' ]).config([ '$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('authentication', {
-			url : "/",
+			url : "/login",
 			templateUrl : "templates/login_or_signup.html"
 		}).state('addPastebin', {
 			url : "/add_pastebin",
@@ -19,12 +19,12 @@
 			url : "/pastebin_list",
 			templateUrl : "templates/pastebin_list.html",
 			controller : "PastebinListController",
-			controllerAs : "ctrl",
+			controllerAs : "ctrl"
 		}).state('usersPastebin', {
 			url : "/users_pastebin/{id:int}",
 			templateUrl : "templates/pastebin_list.html",
 			controller : "PastebinListController",
-			controllerAs : "ctrl",
+			controllerAs : "ctrl"
 		}).state('editPastebin', {
 			url : "/edit_pastebin/{id:int}",
 			templateUrl : "templates/one_pastebin.html",
@@ -38,7 +38,10 @@
 					return pastebinService.getPastebin($stateParams.id);
 				}]
 			}
+		}).state('adminPanel', {
+			url : "/admin_panel",
+			template : "<div>Admin panel</div>"
 		});
-		$urlRouterProvider.otherwise("/");
+		$urlRouterProvider.otherwise("/login");
 	} ]);
 })(angular);

@@ -53,6 +53,9 @@
 		};
 
 		var isAdmin = function() {
+			if(that.user === null){
+				return false;
+			}
 			return Boolean(that.user.is_admin);
 		};
 
