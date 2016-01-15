@@ -86,7 +86,7 @@
 				params: {username : login}
 			}).then(function(response) {
 				if (response.data.length === 0) {
-					return addUser(thatFunction.login, thatFunction.password).then(loginUser(thatFunction.login, thatFunction.password));
+					return addUser(thatFunction.login, thatFunction.password);
 				}
 				return {textMessage : "User with this login already exist"};
 			}, function(response) {
